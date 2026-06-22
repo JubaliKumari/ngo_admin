@@ -42,20 +42,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'sanctum' => [
+        'create_user_api' => [
             'driver' => 'sanctum',
-            'provider' => 'create_users_provider', // 👈 change from 'users'
+            'provider' => 'create_users_provider',
         ],
 
         // Custom application users (Web & API)
-        'create_user_web' => [
-            'driver' => 'session',
-            'provider' => 'create_users_provider',
-        ],
-        'create_user_api' => [
-            'driver' => 'sanctum',
-            'provider' => 'create_users_provider',  // ✅ points to CreaterUser
-        ],
+
     ],
 
     /*

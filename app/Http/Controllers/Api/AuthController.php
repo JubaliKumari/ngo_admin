@@ -14,31 +14,32 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
+            'client' => 'nullable|in:app,website',
         ]);
 
         $user = CreaterUser::where('email', $request->email)->first();
 
-        if (!$user) {
+        if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
                 'success' => false,
-                'message' => 'User not found'
-            ], 404);
-        }
-
-        if (!Hash::check($request->password, $user->password)) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Invalid password'
+                'message' => 'Invalid credentials',
             ], 401);
         }
 
-        $token = $user->createToken('ngo-app')->plainTextToken;
+        $client = $request->input('client', 'app');
+
+        $abilities = $client === 'app'
+            ? ['app:read', 'app:write']
+            : ['website:read', 'website:write'];
+
+        $token = $user->createToken("{$client}-token", $abilities)->plainTextToken;
 
         return response()->json([
             'success' => true,
             'message' => 'Login successful',
             'token' => $token,
-            'user' => $user
+            'client' => $client,
+            'user' => $user,
         ]);
     }
 }

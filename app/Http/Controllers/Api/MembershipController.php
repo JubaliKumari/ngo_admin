@@ -67,7 +67,7 @@ class MembershipController extends Controller
 
     public function show($id)
     {
-        $membership = Membership::find($id);
+        $membership = Membership::where('user_id', $id)->first();
 
         return response()->json([
             'success' => true,

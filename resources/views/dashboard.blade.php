@@ -339,40 +339,7 @@
                     </div> -->
                 </div>
 
-                {{-- UPCOMING EVENTS --}}
-                <!-- <div class="bg-white rounded-2xl shadow-sm p-5">
-                    <h2 class="text-base font-bold text-gray-800 mb-4">Upcoming Events</h2>
-                    <div class="space-y-2">
-                        @php
-                        $events = [
-                        ['day'=>'25','month'=>'MAY','title'=>'Health Checkup Camp', 'location'=>'New York, USA', 'time'=>'10:00 AM'],
-                        ['day'=>'05','month'=>'JUN','title'=>'Environment Awareness Walk','location'=>'Central Park, NY','time'=>'09:00 AM'],
-                        ['day'=>'15','month'=>'JUN','title'=>'Food Donation Drive', 'location'=>'Brooklyn, NY', 'time'=>'11:00 AM'],
-                        ];
-                        @endphp
-                        @foreach($events as $ev)
-                        <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="w-14 text-center bg-gray-50 rounded-xl py-2 flex-shrink-0">
-                                <p class="text-lg font-extrabold text-gray-800 leading-none">{{ $ev['day'] }}</p>
-                                <p class="text-xs font-semibold text-gray-400 uppercase">{{ $ev['month'] }}</p>
-                            </div>
-                            <div class="flex-1">
-                                <p class="font-bold text-gray-800 text-sm">{{ $ev['title'] }}</p>
-                                <p class="text-xs text-gray-400">{{ $ev['location'] }}</p>
-                            </div>
-                            <div class="flex items-center gap-1 text-gray-400 text-xs">
-                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                {{ $ev['time'] }}
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                    <div class="mt-3 text-right">
-                        <a href="#" class="text-sm text-green-500 font-semibold hover:underline">View all events</a>
-                    </div>
-                </div> -->
+
 
             </main>
         </div>
